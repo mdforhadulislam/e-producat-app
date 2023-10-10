@@ -1,0 +1,559 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Home
+
+{% endblock %}
+
+
+
+
+{% block main_content %}
+
+<!-- main content start -->
+<main class="w-full h-auto">
+
+   <!-- loding section start  -->
+
+   <section class="w-full h-full loding-animation-root-section">
+      <div class="loding-animation">
+         <img src="{% static 'Assets/Icon/preloader.gif' %}" alt="loder">
+      </div>
+   </section>
+
+   <!-- loding section end -->
+
+
+   <!-- content slider and catagory start -->
+   <section class="w-full h-auto">
+      <div class="max-w-[1340px] m-auto flex justify-between px-[20px]">
+
+         <!-- right side slider start  -->
+         <div class=" flex flex-col min-w-[320px] w-full ">
+
+            <div class="w-full h-full">
+               <div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark relative"
+                  data-bs-ride="carousel">
+                  <!-- Inner -->
+                  <div class="carousel-inner relative w-full overflow-hidden">
+
+                     {% for single_slider in slider %}
+                     <div class="carousel-item  relative float-left w-full">
+                        <img src="{{ single_slider.slider_image.url }}" class="block w-full h-full lg:h-[495px]"
+                           alt="Motorbike Smoke" />
+                        <div class="carousel-caption hidden md:block absolute text-center">
+                           <h5 class="text-xl">{{single_slider.title}}</h5>
+                           <p>
+                              {{single_slider.sub_title}}
+                           </p>
+                        </div>
+                     </div>
+                     {% endfor %}
+
+                  </div>
+                  <!-- Inner -->
+
+                  <!-- Controls -->
+                  <button
+                     class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                     type="button" data-bs-target="#carouselDarkVariant" data-bs-slide="prev">
+                     <span class="carousel-control-prev-icon inline-block hover:bg-white bg-black rounded-md shadow-md"
+                        aria-hidden="true"></span>
+                  </button>
+                  <button
+                     class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                     type="button" data-bs-target="#carouselDarkVariant" data-bs-slide="next">
+                     <span class="carousel-control-next-icon inline-block hover:bg-white bg-black rounded-md shadow-md"
+                        aria-hidden="true"></span>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <!-- right side slider end  -->
+      </div>
+   </section>
+   <!-- content slider and catagory end -->
+
+
+
+   <!-- support section start  -->
+   <section class="w-full h-auto">
+      <div class="max-w-[1340px] m-auto block sm:flex justify-between px-[20px] py-[40px]">
+         <div class="service-card w-full bg-[#fcfcfc] sm:mr-[15px] shadow hoverShadow p-[20px] cursor-pointer">
+            <div class="w-full xl:flex align-middle justify-start" style="align-items: center">
+               <span class="w-[120px] px-[20px] py-[10px] flex justify-center align-middle m-auto xl:m-0 xl:block">
+                  <img class="w-[60px] h-auto block" src="{% static 'Assets/Icon/delivery icon.svg' %}"
+                     alt="delivery icon" />
+                  <img class="w-[60px] h-auto hidden" src="{% static 'Assets/Icon/delivery icon black.svg' %}"
+                     alt="delivery icon" />
+               </span>
+               <span class="w-[1px] bg-[#999999] h-[60px] hidden xl:inline-block"></span>
+               <span class="w-full xl:w-auto xl:pl-[20px] h-auto block xl:text-left text-center py-[15px] xl:py-0">
+                  <span class="w-full text-[22px] font-medium text-[#555] text-center xl:text-left">FREE
+                     SHIPPING</span>
+                  <p class="text-[15px] text-[#adadad] text-center xl:text-left">
+                     On All Orders
+                  </p>
+               </span>
+            </div>
+         </div>
+
+         <div
+            class="service-card w-full bg-[#fcfcfc] sm:mr-[7.5px] my-[25px] sm:my-0 sm:ml-[7.5px] shadow hoverShadow p-[20px] cursor-pointer">
+            <div class="w-full xl:flex align-middle justify-start" style="align-items: center">
+               <span class="w-[120px] px-[20px] py-[10px] flex justify-center align-middle m-auto xl:m-0 xl:block">
+                  <img class="w-[60px] h-auto block" src="{% static 'Assets/Icon/support icon.svg' %}"
+                     alt="support icon" />
+                  <img class="w-[60px] h-auto hidden" src="{% static 'Assets/Icon/support icon black.svg' %}"
+                     alt="support icon" />
+               </span>
+               <span class="w-[1px] bg-[#999999] h-[60px] hidden xl:inline-block"></span>
+               <span class="w-full xl:w-auto xl:pl-[20px] h-auto block xl:text-left text-center py-[15px] xl:py-0">
+                  <span class="w-full text-[22px] font-medium text-[#555] text-center xl:text-left">24/7
+                     SUPPORT</span>
+                  <p class="text-[15px] text-[#adadad] text-center xl:text-left">
+                     Get Help When You Need
+                  </p>
+               </span>
+            </div>
+         </div>
+
+         <div class="service-card w-full bg-[#f8f8f8] sm:ml-[15px] shadow hoverShadow p-[20px] cursor-pointer">
+            <div class="w-full xl:flex align-middle justify-start" style="align-items: center">
+               <span class="w-[120px] px-[20px] py-[10px] flex justify-center align-middle m-auto xl:m-0 xl:block">
+                  <img class="w-[60px] h-auto block" src="{% static 'Assets/Icon/like icon.svg' %}" alt="like icon" />
+                  <img class="w-[60px] h-auto hidden" src="{% static 'Assets/Icon/like icon black.svg' %}"
+                     alt="like icon" />
+               </span>
+               <span class="w-[1px] bg-[#999999] h-[60px] hidden xl:inline-block"></span>
+               <span class="w-full xl:w-auto xl:pl-[20px] h-auto block xl:text-left text-center py-[15px] xl:py-0">
+                  <span class="w-full text-[22px] font-medium text-[#555] text-center xl:text-left">100%
+                     RETURN</span>
+                  <p class="text-[15px] text-[#adadad] text-center xl:text-left">
+                     Within 30 Days
+                  </p>
+               </span>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- support section start  -->
+
+
+
+   <!-- propuler producat section start -->
+   <section class="w-full h-auto">
+      <div class="max-w-[1340px] h-auto m-auto pt-[10px] pb-[30px] px-[20px] xl:flex justify-between align-middle"
+         style="align-items: center">
+         <div class="w-full h-full xl:pr-[10px] py-[20px]">
+            <div
+               class="collection-card1 w-full xl:w-[580px] h-full relative pt-[20px] md:pt-[40px] xl:pt-[20px] shadow cursor-pointer"
+               style='background-image: url("{{ propuler_categories.0.categories_background_image.url  }}");'>
+               <div class="w-full h-auto flex justify-end align-middle ml-[-3%]">
+                  <div
+                     class="xl:w-[350px] xl:h-[416px] sm:w-[250px] sm:h-[260px] md:w-[350px] md:h-[400px] w-[180px] h-[200px] flex justify-center overflow-hidden"
+                     style="align-items: end">
+                     <img
+                        class="xl:w-[300px] w-[160px] h-[200px] xl:h-auto sm:w-[250px] sm:h-[260px] md:w-[340px] md:h-[400px]"
+                        src="{{ propuler_categories.0.categories_image.url }}" alt="product" />
+                  </div>
+               </div>
+               <div class="absolute xl:top-[78%] top-[65%] left-[5%]">
+                  <h1 class="md:text-[40px] text-[22px] xl:text-[22px] font-semibold">
+                     {{propuler_categories.0.title}}
+                  </h1>
+                  <p class="md:text-[30px] text-[20px] xl:text-[20px]">
+                     {{propuler_categories.0.sub_title}}
+                  </p>
+               </div>
+            </div>
+         </div>
+
+         <div class="w-full h-auto xl:p-[10px] p-[0px] py-0 xl:block md:flex">
+            <div class="w-full h-auto pb-[20px] xl:pr-0 md:pr-[10px] cursor-pointer">
+               <div class="collection-card2 w-full h-auto relative pt-[20px] shadow"
+                  style='background-image: url("{{ propuler_categories.1.categories_background_image.url  }}");'>
+                  <div class="w-full h-auto flex justify-end align-middle ml-[-3%] overflow-hidden">
+                     <img class="w-auto h-[190px]" src="{{ propuler_categories.1.categories_image.url }}"
+                        alt="product" />
+                  </div>
+                  <div class="absolute top-[60%] left-[5%]">
+                     <h1 class="text-[22px] font-semibold">{{ propuler_categories.1.title }}</h1>
+                     <p class="text-[20px]">{{ propuler_categories.1.sub_title }}</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="w-full h-auto pb-[20px] md:pb-[20px] xl:pb-[0px] xl:pl-0 md:pl-[10px] cursor-pointer">
+               <div class="collection-card4 w-full h-auto relative pt-[20px] shadow"
+                  style='background-image: url("{{ propuler_categories.2.categories_background_image.url  }}");'>
+                  <div class="w-full h-auto flex justify-end align-middle ml-[-3%] overflow-hidden">
+                     <img class="w-auto h-[190px]" src="{{ propuler_categories.2.categories_image.url }}"
+                        alt="product" />
+                  </div>
+                  <div class="absolute top-[60%] left-[5%]">
+                     <h1 class="text-[22px] font-semibold">{{ propuler_categories.2.title }}</h1>
+                     <p class="text-[20px]">{{ propuler_categories.2.sub_title }}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="w-full h-auto xl:p-[10px] py-0 xl:pr-0 xl:block md:flex">
+            <div class="w-full h-auto pb-[20px] xl:pr-0 md:pr-[10px] cursor-pointer">
+               <div class="collection-card3 w-full h-auto relative pt-[20px] shadow"
+                  style='background-image: url("{{ propuler_categories.3.categories_background_image.url  }}");'>
+                  <div class="w-full h-auto flex justify-end align-middle ml-[-3%] overflow-hidden">
+                     <img class="w-auto h-[190px]" src="{{ propuler_categories.3.categories_image.url }}"
+                        alt="product" />
+                  </div>
+                  <div class="absolute top-[60%] left-[5%]">
+                     <h1 class="text-[22px] font-semibold">{{ propuler_categories.3.title }}</h1>
+                     <p class="text-[20px]">{{ propuler_categories.3.sub_title }}</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="w-full h-auto xl:pl-0 md:pl-[10px] cursor-pointer">
+               <div class="collection-card5 w-full h-auto relative pt-[20px] shadow"
+                  style='background-image: url("{{ propuler_categories.4.categories_background_image.url  }}");'>
+                  <div class="w-full h-auto flex justify-end align-middle ml-[-3%] overflow-hidden">
+                     <img class="w-auto h-[190px]" src="{{ propuler_categories.4.categories_image.url }}"
+                        alt="product" />
+                  </div>
+                  <div class="absolute top-[60%] left-[5%]">
+                     <h1 class="text-[22px] font-semibold">{{ propuler_categories.4.title }}</h1>
+                     <p class="text-[20px]">{{ propuler_categories.4.sub_title }}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- propuler producat section end -->
+
+
+   <!-- New  slider section start  -->
+   <section class="w-full h-auto">
+      <div class="max-w-[1340px] m-auto py-[30px] px-[20px]">
+         <div class="w-full h-auto py-[25px] flex justify-between align-top">
+            <div class="max-w-[230px] h-auto flex flex-col">
+               <div class="text-[28px] font-semibold pb-[10px] text-[#111]">
+                  New Products
+               </div>
+               <span class="w-[80px] h-[4px] rounded-md inline-block bg-[#111]"></span>
+            </div>
+
+            <a href="#" class="max-w-[80px] h-auto flex justify-between" style="align-items: center">
+               <span class="text-[#666] cursor-pointer">View All</span>
+               <span class="pl-[5px]">
+                  <img class="w-[7px] cursor-pointer" src="{% static 'Assets/Icon/black-right-arrow-icon.svg' %}"
+                     alt="black-right-arrow-icon" />
+               </span>
+            </a>
+         </div>
+         <div class="slider-section">
+            <div class="relative overflow-hidden m-0">
+               <ol class="new-producat-add cards slider font-normal whitespace-nowrap list-none">
+
+                  {% for producat in producats %}
+
+                  {% if producat.status_categories == "new" %}
+
+                  <li class="js-slider-item w-[320px] pr-[10px] inline-block">
+                     <a href="#"
+                        class="w-full h-auto relative flex flex-col border rounded-md shadow-md hover:shadow-xl">
+                        <div class="w-full h-auto">
+                           <div class="w-full h-auto absolute top-0 p-[20px] flex justify-between">
+                              <span
+                                 class="w-auto h-auto px-[6px] py-[3px] bg-[#111] inline-block text-white rounded shadow-md">-{{ producat.discount_percent }}</span>
+
+                           </div>
+
+                           <div class="w-full h-auto">
+                              <img class="w-full h-[380px] rounded-md" src="{{ producat.producat_image_1.url }}"
+                                 alt="Producat" />
+                           </div>
+                        </div>
+                        <div class="w-full h-auto p-[15px] text-center">
+                           <div class="text-[18px] text-[#111] text-center">
+                              {{ producat.title }}
+                           </div>
+                           <div class="w-full h-auto flex justify-center p-3 align-middle" style="align-items: center">
+                              {{producat.prices}} Tk
+                           </div>
+                           <div class="w-full h-auto flex justify-between align-middle" style="align-items: center">
+                              <button
+                                 class="w-[45%] h-auto px-[10px] py-[10px] bg-[#111] text-white text-[16px] rounded-md shadow-md border border-[#111]">
+                                 Select options
+                              </button>
+                              <button
+                                 class="w-[45%] h-auto px-[10px] py-[10px] text-[#111] bg-white text-[16px] rounded-md shadow-md border border-[#111]">
+                                 Add to cart
+                              </button>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  {% endif %}
+
+                  {% endfor %}
+
+               </ol>
+               <div
+                  class="js-slider-arrow flex justify-center align-middle absolute top-1/2 left-1 z-10 rounded-md p-[20px] bg-[#fff] border-2 cursor-pointer shadow-lg left slider-arrow"
+                  style="align-items: center;">
+               </div>
+
+               <div
+                  class="js-slider-arrow flex justify-center align-middle absolute top-1/2 right-1 z-10 rounded-md p-[20px] bg-[#fff] border-2 cursor-pointer shadow-lg right slider-arrow"
+                  style="align-items: center;">
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- New  slider section start  -->
+
+
+   <!-- Popular Products slider start  -->
+   <section class="w-full h-auto">
+      <div class="max-w-[1340px] m-auto py-[30px] px-[20px]">
+         <div class="w-full h-auto py-[25px] flex justify-between align-top">
+            <div class="max-w-[300px] h-auto flex flex-col">
+               <div class="text-[28px] font-semibold pb-[10px] text-[#111]">
+                  Popular Products
+               </div>
+               <span class="w-[80px] h-[4px] rounded-md inline-block bg-[#111]"></span>
+            </div>
+
+            <a href="#" class="max-w-[80px] h-auto flex justify-between" style="align-items: center">
+               <span class="text-[#666] cursor-pointer">View All</span>
+               <span class="pl-[5px]">
+                  <img class="w-[7px] cursor-pointer" src="{% static 'Assets/Icon/black-right-arrow-icon.svg' %}"
+                     alt="black-right-arrow-icon" />
+               </span>
+            </a>
+         </div>
+         <div class="slider-section">
+            <div class="relative overflow-hidden m-0">
+               <ol class="new-producat-add cards slider font-normal whitespace-nowrap list-none">
+
+
+                  {% for producat in producats %}
+
+                  {% if producat.status_categories == "top" %}
+
+                  <li class="js-slider-item w-[320px] pr-[10px] inline-block">
+                     <a href="#"
+                        class="w-full h-auto relative flex flex-col border rounded-md shadow-md hover:shadow-xl">
+                        <div class="w-full h-auto">
+                           <div class="w-full h-auto absolute top-0 p-[20px] flex justify-between">
+                              <span
+                                 class="w-auto h-auto px-[6px] py-[3px] bg-[#111] inline-block text-white rounded shadow-md">-{{ producat.discount_percent }}</span>
+
+                           </div>
+
+                           <div class="w-full h-auto">
+                              <img class="w-full h-[380px] rounded-md" src="{{ producat.producat_image_1.url }}"
+                                 alt="Producat" />
+                           </div>
+                        </div>
+                        <div class="w-full h-auto p-[15px] text-center">
+                           <div class="text-[18px] text-[#111] text-center">
+                              {{ producat.title }}
+                           </div>
+                           <div class="w-full h-auto flex justify-center p-3 align-middle" style="align-items: center">
+                              {{producat.prices}} Tk
+                           </div>
+                           <div class="w-full h-auto flex justify-between align-middle" style="align-items: center">
+                              <button
+                                 class="w-[45%] h-auto px-[10px] py-[10px] bg-[#111] text-white text-[16px] rounded-md shadow-md border border-[#111]">
+                                 Select options
+                              </button>
+                              <button
+                                 class="w-[45%] h-auto px-[10px] py-[10px] text-[#111] bg-white text-[16px] rounded-md shadow-md border border-[#111]">
+                                 Add to cart
+                              </button>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  {% endif %}
+
+                  {% endfor %}
+
+
+               </ol>
+               <div
+                  class="js-slider-arrow flex justify-center align-middle absolute top-1/2 left-1 z-10 rounded-md p-[20px] bg-[#fff] border-2 cursor-pointer shadow-lg left slider-arrow"
+                  style="align-items: center;">
+               </div>
+
+               <div
+                  class="js-slider-arrow flex justify-center align-middle absolute top-1/2 right-1 z-10 rounded-md p-[20px] bg-[#fff] border-2 cursor-pointer shadow-lg right slider-arrow"
+                  style="align-items: center;">
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Popular Products slider end -->
+
+
+
+   <!-- all producat start  -->
+
+   <section class="w-full h-auto">
+
+      <div class="max-w-[1340px] h-auto px-[10px] pt-[30px] pb-[40px] m-auto">
+
+         <!-- producat header start  -->
+         <div class="w-full h-auto py-[25px] px-[10px] flex justify-between align-top">
+            <div class="max-w-[300px] h-auto flex flex-col">
+               <h1 class="text-[28px] font-semibold pb-[10px] text-[#111]">
+                  Our All Products
+               </h1>
+               <span class="w-[80px] h-[4px] rounded-md inline-block bg-[#111]"></span>
+            </div>
+
+            <a href="#" class="max-w-[80px] h-auto flex justify-between" style="align-items: center">
+               <span class="text-[#666] cursor-pointer">View All</span>
+               <span class="pl-[5px]">
+                  <img class="w-[7px] cursor-pointer" src="{% static 'Assets/Icon/black-right-arrow-icon.svg' %}"
+                     alt="black-right-arrow-icon" />
+               </span>
+            </a>
+         </div>
+         <!-- producat header end  -->
+
+
+
+         <!-- producat section start  -->
+         <div class="w-full h-auto text-center">
+
+            {% for producat in producats %}
+
+            <div class="w-[325px] p-[8px] inline-block">
+               <a href="#"
+               class="w-full h-auto relative flex flex-col border rounded-md shadow-md hover:shadow-xl">
+               <div class="w-full h-auto">
+                  <div class="w-full h-auto absolute top-0 p-[20px] flex justify-between">
+                     <span
+                        class="w-auto h-auto px-[6px] py-[3px] bg-[#111] inline-block text-white rounded shadow-md">-{{ producat.discount_percent }}</span>
+
+                  </div>
+
+                  <div class="w-full h-auto">
+                     <img class="w-full h-[380px] rounded-md" src="{{ producat.producat_image_1.url }}"
+                        alt="Producat" />
+                  </div>
+               </div>
+               <div class="w-full h-auto p-[15px] text-center">
+                  <div class="text-[18px] text-[#111] text-center">
+                     {{ producat.title }}
+                  </div>
+                  <div class="w-full h-auto flex justify-center p-3 align-middle" style="align-items: center">
+                     {{producat.prices}} Tk
+                  </div>
+                  <div class="w-full h-auto flex justify-between align-middle" style="align-items: center">
+                     <button
+                        class="w-[45%] h-auto px-[10px] py-[10px] bg-[#111] text-white text-[16px] rounded-md shadow-md border border-[#111]">
+                        Select options
+                     </button>
+                     <button
+                        class="w-[45%] h-auto px-[10px] py-[10px] text-[#111] bg-white text-[16px] rounded-md shadow-md border border-[#111]">
+                        Add to cart
+                     </button>
+                  </div>
+               </div>
+            </a>
+               
+
+
+
+            </div>
+            {% endfor %}
+         </div>
+         <!-- producat section end -->
+
+
+
+         <!-- load more section start  -->
+
+         <div class="w-full text-center h-auto py-[15px] ">
+            <button class="p-[10px] px-[18px] bg-[#111] text-[#fff] rounded shadow">Load More</button>
+         </div>
+
+         <!-- load more section end -->
+
+
+      </div>
+
+
+   </section>
+
+   <!-- all producat end -->
+
+
+
+
+
+   <!-- testimonial section start  -->
+
+   <section class="w-full h-auto">
+
+
+      <!-- producat header start  -->
+      <div class="w-full h-auto py-[25px] px-[10px] flex justify-between align-top">
+         <div class="max-w-[300px] h-auto flex flex-col">
+            <h1 class="text-[28px] font-semibold pb-[10px] text-[#111]">
+               Coustomer Review
+            </h1>
+            <span class="w-[80px] h-[4px] rounded-md inline-block bg-[#111]"></span>
+         </div>
+
+         <a href="#" class="max-w-[80px] h-auto flex justify-between" style="align-items: center">
+            <span class="text-[#666] cursor-pointer">View All</span>
+            <span class="pl-[5px]">
+               <img class="w-[7px] cursor-pointer" src="{% static 'Assets/Icon/black-right-arrow-icon.svg' %}"
+                  alt="black-right-arrow-icon" />
+            </span>
+         </a>
+      </div>
+      <!-- producat header end  -->
+
+
+
+      <div class="w-full h-auto py-[25px] px-[10px] text-center">
+
+         {% for review in reviews %}
+
+         <div class="w-auto h-auto inline-block p-2">
+            <img class="w-[300px] h-auto bg-black shadow-md rounded-md "
+               src="{{ review.ss_coustomer_review.url }}" alt="" srcset="">
+         </div>
+
+         
+         {% endfor %}
+
+
+      </div>
+
+
+   </section>
+
+   <!-- testimonial section end -->
+
+
+
+
+
+</main>
+<!-- main content end -->
+{% endblock %}
