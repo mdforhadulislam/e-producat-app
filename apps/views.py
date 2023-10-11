@@ -14,3 +14,25 @@ def home(request):
       'reviews':review_ss
    }
    return render(request,'home.html',context)
+
+
+
+def shops(request):
+   producat = Producat.objects.all()
+   context = {
+      'producats':producat,
+   }
+   return render(request,'shops.html',context)
+
+
+
+def single_producat(request,producat_id):
+   producat = Producat.objects.get(id=producat_id)
+   producats = Producat.objects.all()
+   print(producat)
+   context = {
+      'producat':producat,
+      'producats':producats
+   }
+   return render(request,'single-producat.html',context)
+   

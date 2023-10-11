@@ -36,7 +36,7 @@
             <div class="w-[400px] lg:block hidden">
                <ul class="list-none flex align-middle justify-between">
                   <li class="w-[70px] text-[17px]">
-                     <a href="/Html/home.html" class="w-full flex align-middle justify-between cursor-pointer">
+                     <a href="{% url 'home' %}" class="w-full flex align-middle justify-between cursor-pointer">
                         <span class="text-[#111] font-medium">Home</span>
                         <span>
                            <img class="w-[15px] h-full" src="{% static 'Assets/Icon/down-arrow-icon.svg' %}"
@@ -46,7 +46,7 @@
                   </li>
 
                   <li class="w-[65px] text-[17px]">
-                     <a href="/Html/shops.html" class="w-full flex align-middle justify-between cursor-pointer">
+                     <a href="{% url 'shop' %}" class="w-full flex align-middle justify-between cursor-pointer">
                         <span class="text-[#111] font-medium">Shop</span>
                         <span>
                            <img class="w-[15px] h-full" src="{% static 'Assets/Icon/down-arrow-icon.svg' %}"
@@ -363,7 +363,7 @@
    <script>
       const courosel_container = document.querySelector(".carousel-inner")
       courosel_container.children[0].classList.add('active')
-      
+
    </script>
 
    <script src="{% static 'Js/categories-button.js' %}"></script>
@@ -372,6 +372,7 @@
    <script src="{% static 'Js/loding-animation.js' %}"></script>
    <script src="{% static 'Js/scroll-fixed-navbar.js' %}"></script>
    <script src="{% static 'Js/menu-click.js' %}"></script>
+
 </body>
 
 </html>

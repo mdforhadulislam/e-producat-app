@@ -22,7 +22,9 @@ from apps.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home)
+    path('',home,name="home"),
+    path('shop/',shops,name="shop"),
+    path('shop/<int:producat_id>/',single_producat,name="single Producat")
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

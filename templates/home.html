@@ -264,7 +264,7 @@ Home
                   {% if producat.status_categories == "new" %}
 
                   <li class="js-slider-item w-[320px] pr-[10px] inline-block">
-                     <a href="#"
+                     <a href="/shop/{{producat.id}}"
                         class="w-full h-auto relative flex flex-col border rounded-md shadow-md hover:shadow-xl">
                         <div class="w-full h-auto">
                            <div class="w-full h-auto absolute top-0 p-[20px] flex justify-between">
@@ -349,7 +349,7 @@ Home
                   {% if producat.status_categories == "top" %}
 
                   <li class="js-slider-item w-[320px] pr-[10px] inline-block">
-                     <a href="#"
+                     <a  href="/shop/{{producat.id}}"
                         class="w-full h-auto relative flex flex-col border rounded-md shadow-md hover:shadow-xl">
                         <div class="w-full h-auto">
                            <div class="w-full h-auto absolute top-0 p-[20px] flex justify-between">
@@ -440,7 +440,7 @@ Home
             {% for producat in producats %}
 
             <div class="w-[325px] p-[8px] inline-block">
-               <a href="#"
+               <a  href="/shop/{{producat.id}}"
                class="w-full h-auto relative flex flex-col border rounded-md shadow-md hover:shadow-xl">
                <div class="w-full h-auto">
                   <div class="w-full h-auto absolute top-0 p-[20px] flex justify-between">
